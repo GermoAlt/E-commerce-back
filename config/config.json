@@ -4,7 +4,7 @@
     "password": "api2021",
     "database": "LIBRERIA",
     "dialect": "mssql",
-    "logging":"true",
+    "logging":true,
     "port":"61892"
   },
   "test": {

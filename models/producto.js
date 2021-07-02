@@ -2,56 +2,56 @@
 const {Model} = require('sequelize');
 
 module.exports = (sequelize, DataTypes)=>{
-class user extends Model { }
+class producto extends Model { }
 
-  user.init({
+producto.init({
     id: {
       type: DataTypes.INTEGER,
       allowNull:false,
       autoIncrement:true,
       primaryKey:true
     },
-    username:{
+    code:{
       type:DataTypes.STRING,
-      allowNull:true
+      allowNull:false
     },
-    password:{
+    name:{
       type: DataTypes.STRING,
       allowNull:true
     },
-    tipo:{
+    image:{
       type: DataTypes.STRING,
       allowNull:false
     },
-    nombre:{
-      type: DataTypes.STRING,
-      allowNull:true
+    price:{
+      type: DataTypes.DOUBLE,
+      allowNull:false
     },
-    apellido:{
-      type:DataTypes.STRING,
-      allowNull:true
-    },
-    du:{
+    category:{
       type:DataTypes.INTEGER,
-      allowNull:true
+      allowNull:false,
+      references:{
+        model:'categoria',
+        key:'id'
+      }
     },
-    domicilio:{
-      type:DataTypes.STRING,
-      allowNull:true
-    },
-    telefono:{
+    quantity:{
       type:DataTypes.INTEGER,
-      allowNull:true
+      allowNull:false
     },
-    status:{
-      type:DataTypes.CHAR,
+    description:{
+      type:DataTypes.STRING,
+      allowNull:false
+    },
+    longDescription:{
+      type:DataTypes.STRING,
       allowNull:false
     }
 
   },{
     sequelize,
-    modelName: 'user',
+    modelName: 'producto',
   });
 
-  return user;
+  return producto;
 };
