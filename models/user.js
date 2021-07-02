@@ -13,11 +13,11 @@ class user extends Model { }
     },
     username:{
       type:DataTypes.STRING,
-      allowNull:true
+      allowNull:false
     },
     password:{
       type: DataTypes.STRING,
-      allowNull:true
+      allowNull:false
     },
     tipo:{
       type: DataTypes.STRING,
@@ -44,8 +44,8 @@ class user extends Model { }
       allowNull:true
     },
     status:{
-      type:DataTypes.CHAR,
-      allowNull:false
+      type:DataTypes.BOOLEAN,
+      allowNull:true
     }
 
   },{

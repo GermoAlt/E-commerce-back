@@ -24,7 +24,7 @@ module.exports = {
                     du: req.body.du,
                     domicilio: req.body.domicilio,
                     telefono: req.body.telefono,
-                    status: req.body.status
+                    status: true
                 }
 
 			})
@@ -87,7 +87,25 @@ module.exports = {
 					username: req.body.username
 				}
 			})
-			.then(usuarios => res.status(200).send(usuarios))
+			.then(usuarios => res.status(200).send(usuarios != null ? usuarios : {}))
 			.catch(error => res.status(400).send(error))
-	}
+	},
+
+	/**
+	 * Login user
+	 * 
+	 * @param {*} req 
+	 * @param {*} res 
+	 */
+		login(req, res) {
+			return usuarios
+				.findOne({
+					where: {
+						username: req.body.username,
+						password: req.body.password
+					}
+				})
+				.then(usuarios => res.status(200).send(usuarios!=null ? "Ok" : "Invalido"))
+				.catch(error => res.status(400).send(error))
+		}
 }

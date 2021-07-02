@@ -14,6 +14,10 @@ categoria.init({
     nombre:{
       type:DataTypes.STRING,
       allowNull:false
+    },
+    status:{
+      type:DataTypes.BOOLEAN,
+      allowNull:true
     }
   },{
     sequelize,

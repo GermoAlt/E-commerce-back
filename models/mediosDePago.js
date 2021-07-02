@@ -26,6 +26,10 @@ mediosDePago.init({
     vencimiento:{
         type:DataTypes.DATEONLY,
         allowNull:false
+    },
+    status:{
+      type:DataTypes.BOOLEAN,
+      allowNull:true
     }
 
   },{

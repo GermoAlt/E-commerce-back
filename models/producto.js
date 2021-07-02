@@ -46,6 +46,10 @@ producto.init({
     longDescription:{
       type:DataTypes.STRING,
       allowNull:false
+    },
+    status:{
+      type:DataTypes.BOOLEAN,
+      allowNull:true
     }
 
   },{
