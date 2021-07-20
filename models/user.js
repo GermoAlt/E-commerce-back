@@ -44,7 +44,7 @@ class user extends Model { }
       allowNull:true
     },
     status:{
-      type:DataTypes.BOOLEAN,
+      type:DataTypes.CHAR,
       allowNull:true
     }
 

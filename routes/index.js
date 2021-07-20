@@ -7,9 +7,11 @@ const transaccionesService = require('../services/transaccionesService');
 
 module.exports = (app) => {
 
-    app.get('/api', (req, res) => res.status(200).send({
-		message: 'Buenisimo entramos en nuestra api',
-	}));
+    app.get('/api', (req, res) => {
+    	res.status(200).send({
+			message: 'Buenisimo entramos en nuestra api',
+		})
+    });
 
 	// Routes of Web Services
 	// Users
@@ -17,7 +19,7 @@ module.exports = (app) => {
 	app.get('/api/users/list', userService.list);
 	app.get('/api/users/find', userService.find);
     app.post('/api/users/update', userService.update);
-	app.get('/api/users/login', userService.login);
+	app.post('/api/users/login', userService.login);
 
 	// Category
 	app.post('/api/category/create', categoriasService.create);
